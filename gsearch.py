@@ -5,8 +5,6 @@ import re
 # Definitions
 user_agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0"
 print('Google Search\n')
-query = input().replace(' ', '+')
-url = f"https://google.com/search?q={query}"
 
 def scrape_links(soup):
   twicks = soup.find_all('div', class_='r')
@@ -60,21 +58,9 @@ def search(query):
 
 # Get the starting point links
 
-response = requests.get(url, headers={"user-agent" : user_agent})
+query = input().replace(' ', '+')
+currPage = search(query)
 
-if response.status_code == 503:
-  print('[' + response.url + '] ' + response.text)
-  exit()
-
-results = scrape_links(bs(response.content, "html.parser"))
-
-# display the results
-
-print('\nShowing results for: ' + query.replace('+', ' '))
-for i in range(len(results)):
-  print('['+str(i)+']: ' + results[i]['title'])
-
-currPage = results
 while True:
   print('\n>> ', end='', flush=True)
   update = command(input(), currPage)
