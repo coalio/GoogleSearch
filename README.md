@@ -43,6 +43,7 @@ Fetching: Blank.Org (...)
 [http://blank.org/]
 
 
-blank```
+blank
+```
 
 You can make another search by just typing in the query (without any prefix), or you can leave the app by leaving the input empty and pressing enter or by typing `:q`
