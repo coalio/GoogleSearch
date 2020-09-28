@@ -16,7 +16,6 @@ To try it, run `python gsearch.py`
 ## What?
 
 You can preview the content of the results by running `>x`, x being the result index
-Or make another google search by just typing it
 
 Example:
 
